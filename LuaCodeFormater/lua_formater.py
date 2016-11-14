@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 import os
+import sys
 import subprocess
 
 
@@ -15,8 +16,8 @@ def convert(path):
         f.write(result)
 
 
-def main():
-    for root, dirs, files in os.walk('.'):
+def main(dir_name):
+    for root, dirs, files in os.walk(dir_name):
         for f in files:
             if f.endswith('.lua'):
                 print "-" * 100
@@ -25,4 +26,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    argv = sys.argv
+    if len(argv) > 1:
+        if os.path.isdir(argv[1]):
+            main(argv[1])
+        elif os.path.isfile(argv[1]):
+            convert(argv[1])
+        else:
+            raise Exception('\n%s is not valid file or dir path;\nUsage: python %s path_to_file||path_to_dir' % (argv[1], argv[0]))
+    else:
+        main('.')

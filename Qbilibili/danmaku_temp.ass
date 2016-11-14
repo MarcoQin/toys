@@ -17,5 +17,4 @@ Style: test, Kaiti, 30, &H00FFFFFF, &H00FFFFFF, &H00000000, &H00000000, 0, 0, 0,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 2,0:00:01.00,0:00:04.00,test,,0000,0000,0000,,{\move(1280, 0, -105, 0)}welcome
-Dialogue: 2,0:00:03.36,0:00:13.36,test,,0000,0000,0000,,{\move(1280, 0, -75, 0)}楼上神id
+; Dialogue: 2,0:00:01.00,0:00:04.00,test,,0000,0000,0000,,{\move(1280, 0, -105, 0)}welcome
